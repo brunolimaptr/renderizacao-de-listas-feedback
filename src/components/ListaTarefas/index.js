@@ -30,6 +30,13 @@ export function ListaTarefas() {
     setLista(listaFiltrada);
   };
 
+  const adcEnter = (event) => {
+    if (event.key === "Enter") {
+      adicionaTarefa();
+    }
+  }
+
+
   return (
     <ListaTarefasContainer>
       <InputContainer>
@@ -37,8 +44,9 @@ export function ListaTarefas() {
           placeholder="Digite aqui uma tarefa"
           value={novaTarefa}
           onChange={onChangeTarefa}
+          onKeyPress={adcEnter}
         />
-        <AddTaskButton onClick={adicionaTarefa}>Adicionar</AddTaskButton>
+        <AddTaskButton onClick={adicionaTarefa} >Adicionar</AddTaskButton>
       </InputContainer>
       <ListaContainer>
         <ul>
